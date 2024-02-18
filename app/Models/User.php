@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
+        'role',
     ];
 
     /**
@@ -42,4 +44,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    /**
+     * Get the company associated with the user.
+     */
+    public function company(){
+        return $this->hasOne(Company::class);
+    }
+     /**
+     * Get the applicant associated with the user.
+     */
+    public function applicant()
+    {
+        return $this->hasOne(Applicant::class);
+    }
+      /**
+     * Get the job offers created by the user.
+     */
+    public function jobOffers(){
+
+        return $this->hasMany(JobOffer::class, 'user_id');
+  }
 }

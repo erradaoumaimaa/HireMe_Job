@@ -17,7 +17,7 @@ return new class extends Migration
             $table->json('experiences')->nullable();
             $table->json('education')->nullable();
             $table->json('languages')->nullable();
-            $table->foreignId('applicants_id')->constrained();
+            $table->foreignId('applicant_id')->constrained();
             $table->timestamps();
         });
     }
