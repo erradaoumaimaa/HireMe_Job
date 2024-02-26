@@ -10,15 +10,8 @@ class Applicant extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'user_id',
-        'current_post', 
-        'industry',
-        'address',
-        'contact',
-        'about',
-        'title',
-    ];
+    protected $guarded = [];
+
 
     protected $dates = ['deleted_at'];
 

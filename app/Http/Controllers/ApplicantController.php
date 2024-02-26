@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ApplicantController extends Controller
@@ -11,7 +11,8 @@ class ApplicantController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::where('role', 'user')->get();
+        return view('users.index',compact('users'));
     }
 
     /**

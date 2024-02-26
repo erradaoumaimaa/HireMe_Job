@@ -8,10 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'applicant_id',
-        'job_offer_id'
-    ];
+    protected $guarded = [];
+
 
     public function applicant()
     {
